@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Quiz</title>
+    
+    <link rel="stylesheet" href="QuizCSS.css">
+    <script src="QuizJS.js" defer></script>
+    
+</head> 
+<body>
+    <h2>FINANCIAL QUIZ</h2>
+    <div class="quiz_container">
+        <div class="progress" id="progress">
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <div id="content" class="content">문제</div>
+        <input type="text" id="answer" placeholder="정답을 입력하세요">
+        <button id="submitbtn">제출</button>    
+
+        <canvas id="timer" width="200px" height="200px"></canvas>
+
+        <div id="result" class="result"></div>
+        <div class="O" id="O">정답입니다🎉</div>
+        <div class="X" id="X">오답입니다❌</div>    
+    </div>
+    <div id="finalscore" class="score">총 점수: <span id="score"></span></div>
+    <button id="restartbtn">다시 시작</button>
+</body>
+</html>

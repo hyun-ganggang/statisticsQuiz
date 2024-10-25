@@ -1,0 +1,57 @@
+body {
+    color: azure;
+    background-color: rgba(0, 0, 0, 0.891);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    
+}
+.quiz_container {
+    display: inline-block;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+.content {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+#answer {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.progress {
+    margin-bottom: 20px;
+}
+.progress span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+.progress .filled {
+    background-color: cornflowerblue;
+}
+.result {
+    margin-top: 20px;
+    font-size: 20px;
+}
+.O, .X {
+    display: none;
+    font-size: 24px;
+    margin-top: 10px;
+}
+.O {
+    color: green;
+}
+.X {
+    color: red;
+}
+canvas {
+    margin: 10px auto;
+    display: block;
+}
