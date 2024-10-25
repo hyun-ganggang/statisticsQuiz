@@ -79,7 +79,7 @@ function startTimer() {
 function progressCircle() {
     let circles = document.querySelectorAll('#progress span');
     circles.forEach((circle, index) => {
-        if (index < currentQuizIndex) {
+        if (index < currentQuizIndex+1) {
             circle.classList.add('filled');
         } else{
             circle.classList.remove('filled');
@@ -89,6 +89,8 @@ function progressCircle() {
 
 // 다음 문제를 표시하는 함수
 function displayNextQuiz() {
+    document.getElementById('finalscore').style.display = 'none';
+    document.getElementById('restartbtn').style.display = 'none';
     if (currentQuizIndex < quizData.length) {
         console.log("현재 문제:", quizData[currentQuizIndex]);
         document.getElementById('content').textContent = quizData[currentQuizIndex].content;
@@ -96,8 +98,9 @@ function displayNextQuiz() {
         document.getElementById('result').textContent = '';  // 결과 초기화
         document.getElementById('O').style.display = 'none';
         document.getElementById('X').style.display = 'none';
-        startTimer();  // 타이머 시작
+        
         progressCircle();  
+        startTimer();  // 타이머 시작
     } else {
         endQuiz();  // 퀴즈 종료
     }
@@ -120,6 +123,8 @@ function checkAnswer() {
 
 // 오답일 경우 처리 함수
 function wrongAnswer() {
+    let correctAnswer = quizData[currentQuizIndex].word;
+    document.getElementById("rightResult").textContent=`정답: ${correctAnswer}`;
     document.getElementById('X').style.display = 'block';
     
     setTimeout(displayNextQuiz, 2000);  // 2초 후 다음 문제로 이동
